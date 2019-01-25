@@ -3,6 +3,7 @@ import '@polymer/iron-icon/iron-icon.js';
 
 class IconToggle extends PolymerElement {
 
+  //TEMPLATE
   static get template() {
 
     return html`
@@ -24,11 +25,7 @@ class IconToggle extends PolymerElement {
     `;
   }
 
-  constructor() {
-    //ALWAYS FIRST LINE OF CONSTRUCTOR
-    super();
-  }
-
+  //PROPERTIES
   static get properties() {
     //DEFINE PROPERTIES (that will be used for data binding, see above)
     return {
@@ -38,13 +35,25 @@ class IconToggle extends PolymerElement {
       pressed: {
         type: Boolean,
         value: false,
+        //allows property to be observable
         notify: true,
+        //changes value of html attribute to whatever property changed to.
         reflectToAttribute: true
       }
     };
   }
 
+  constructor() {
+    //ALWAYS FIRST LINE OF CONSTRUCTOR
+    super();
+    //ADD EVENT LISTENER
+    this.addEventListener('click', this.toggle.bind(this));
+  }
 
+  //CLICK CALLBACK
+  toggle() {
+    this.pressed = !this.pressed;
+  }
 
 }
 
