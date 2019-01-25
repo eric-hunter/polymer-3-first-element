@@ -1,0 +1,11 @@
+/* shadow DOM styles go here */
+:host {
+  display: inline-block;
+}
+iron-icon {
+  fill: rgba(0,0,0,0);
+  stroke: currentcolor;
+}
+:host([pressed]) iron-icon {
+  fill: currentcolor;
+}

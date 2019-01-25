@@ -20,7 +20,7 @@ class IconToggle extends PolymerElement {
         }
       </style>
       <!-- shadow DOM goes here -->
-      <iron-icon icon="polymer"></iron-icon>
+      <iron-icon icon="[[toggleIcon]]"></iron-icon>
     `;
   }
 
@@ -28,6 +28,18 @@ class IconToggle extends PolymerElement {
     //ALWAYS FIRST LINE OF CONSTRUCTOR
     super();
   }
+
+  static get properties() {
+    //DEFINE PROPERTIES (that will be used for data binding, see above)
+    return {
+      toggleIcon: {
+        type:String
+      }
+    };
+  }
+
+
+
 }
 
 customElements.define('icon-toggle', IconToggle);
