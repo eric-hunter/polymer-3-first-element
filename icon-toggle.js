@@ -33,7 +33,13 @@ class IconToggle extends PolymerElement {
     //DEFINE PROPERTIES (that will be used for data binding, see above)
     return {
       toggleIcon: {
-        type:String
+        type: String
+      },
+      pressed: {
+        type: Boolean,
+        value: false,
+        notify: true,
+        reflectToAttribute: true
       }
     };
   }
